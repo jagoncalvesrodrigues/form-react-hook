@@ -24,4 +24,18 @@ export const GlobalStyles = createGlobalStyle`
         color: inherit;
     }
 
+    body{
+        font-family: "Karla", serif;
+        font-weight: 400;
+        background-color: #E0F1E8;
+        padding:32px 16px;
+
+        @media screen and (width>=768px) {
+            padding: 128px 39px;
+        }
+        @media screen and (width>=1440px) {
+            padding: 128px 352px;
+        }
+    }
+
 `;
