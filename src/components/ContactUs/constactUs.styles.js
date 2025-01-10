@@ -19,6 +19,10 @@ const StyledBoxFields = styled.div`
 const StyledBoxCB = styled.div`
     display: flex;
     gap:16px;
+`;
+const StyledBoxCBmain = styled.div`
+    display: flex;
+    flex-direction: column;
     margin-bottom: 40px;
 `;
 const StyledBoxFieldQuery = styled.div`
@@ -28,6 +32,7 @@ const StyledBoxFieldQuery = styled.div`
     border-radius: 8px;
     width: 100%;
     align-items: center;
+    background-color: ${(props) => (props.isSelected ? '#E0F1E8' : '#FFFFFF')}
 `;
 const StyledBoxQuery = styled.div`
     display: flex;
@@ -51,8 +56,14 @@ const StyledTextQuery = styled.p`
 const StyledTextInput = styled.input`
     border-radius: 8px;
     border-style: none;
-    border: 1px solid ${({$bordercolor})=>$bordercolor};
+    border: 1px solid ${({$bordercolor}) => $bordercolor};
     height: 51px;
+    outline:none;
+    
+    &:focus{
+        border: 2px solid ${({$bordercolorselected})=>$bordercolorselected};
+    }
+
 `;
 const StyledCheckBox = styled.input`
     border-radius: 50%;
@@ -64,6 +75,11 @@ const StyledTextArea = styled.textarea`
     border: 1px solid ${({$bordercolor})=>$bordercolor};
     border-radius: 16px;
     height: 240px;
+    outline:none;
+
+    &:focus{
+        border: 2px solid ${({$bordercolorselected})=>$bordercolorselected};
+    }
 `;
 const StyledButton = styled.input`
     color:white;
@@ -75,7 +91,11 @@ const StyledButton = styled.input`
     padding: 16px;
     border-style: none;
 `;
+const StyledErrorText = styled.p`
+    color: ${({$color})=>$color};
+    margin: 0;
+`;
 
 
 
-export {StyledButton,StyledTextArea,StyledCheckBox,StyledTextQuery,StyledBoxQueryType,StyledTextInput,StyledBoxFieldQuery,StyledBoxQuery,StyledBoxCB,StyledBoxFields,StyledBox,StyledTitle,StyledBoxName}
+export {StyledBoxCBmain,StyledErrorText,StyledButton,StyledTextArea,StyledCheckBox,StyledTextQuery,StyledBoxQueryType,StyledTextInput,StyledBoxFieldQuery,StyledBoxQuery,StyledBoxCB,StyledBoxFields,StyledBox,StyledTitle,StyledBoxName}
